@@ -1,0 +1,21 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#nav-bar {
+    width: 100vw;
+    height: 10vh;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
