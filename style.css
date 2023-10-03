@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  background-color: #191919;
 }
 
 html,
@@ -10,12 +11,31 @@ body {
   width: 100%;
 }
 
-#nav-bar {
-    width: 100vw;
-    height: 10vh;
-    background-color: red;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#nav-bar > nav {
+  position: absolute;
+  width: 100vw;
+  height: 10vh;
+  /* background-color: rgba(255, 0, 0, 0.212); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 30px;
+  margin-right: 0px;
+}
 
+#navigation-button {
+  padding: 6px 12px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  transition: all ease 0.25s;
+  box-shadow: none;
+  background-position: center;
+  margin-right: 10px;
+}
+
+#navigation-button:hover {
+  /* backdrop-filter: blur(2px); */
+  padding: 8px 14px;
 }
