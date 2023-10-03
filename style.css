@@ -14,21 +14,42 @@ body {
 #nav-bar > nav {
   position: absolute;
   width: 100vw;
-  height: 10vh;
+  height: 12vh;
   /* background-color: rgba(255, 0, 0, 0.212); */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 4px 30px;
-  margin-right: 0px;
+  margin: 2px 0px;
+}
+
+#nav-bar-left> .ri-menu-line{
+    color: white;
+    font-size: 30px;
+    margin-right: 2rem;
+    /* background-color: red; */
+}
+#nav-bar-left>a{
+    text-decoration: none;
+}
+.ri-github-fill{
+    color: white;
+    font-size: 34px;
+    transition: all ease .25s;
+    /* background-color: blue; */
+    text-decoration: none;
+    
+}
+.ri-github-fill:hover{
+    text-decoration:underline;
 }
 
 #navigation-button {
-  padding: 6px 12px;
+  padding: 10px 18px;
   background-color: transparent;
-  border: 1px solid white;
+  border: .5px solid rgb(1, 150, 177);
   color: white;
-  border-radius: 10px;
+  border-radius: 25px;
   transition: all ease 0.25s;
   box-shadow: none;
   background-position: center;
@@ -37,5 +58,6 @@ body {
 
 #navigation-button:hover {
   /* backdrop-filter: blur(2px); */
-  padding: 8px 14px;
+  padding: 11px 25px;
+  background-color: rgb(1, 150, 177);
 }
