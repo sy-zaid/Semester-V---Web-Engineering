@@ -87,6 +87,7 @@ body {
   height: 70vh;
   width: 30vw;
   margin: 60px 0px 0px 0px;
+  padding-top: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -140,11 +141,18 @@ input[type="text"]:focus {
   background-color: rgb(200, 235, 241);
 }
 
+#remember-me{
+  color: black;
+  font-family: Jost;
+  text-align: left;
+  margin: 10px 4px 0px 0px;
+}
+
 #login-box > button {
   padding: 10px 22px;
   background-color: transparent;
   border: 0.5px solid rgb(1, 150, 177);
-  color: white;
+  color: black;
   border-radius: 25px;
   transition: all ease 0.25s;
   box-shadow: none;

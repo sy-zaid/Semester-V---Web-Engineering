@@ -33,19 +33,28 @@
     <div id="heading-box"><h1>Login to Your Account</h1></div>
 
     <div id="login-box">
+      <img src="static/avatar.png" alt="" />
       <form action="">
         <div id="input-boxes">
           <div id="username">
-            <label id="box-labels" for="username">Username</label><br />
+            <label id="box-labels" for="username"
+              >Username or Email <span style="color: red">*</span></label
+            ><br />
             <input id="username" type="text" required />
           </div>
           <div id="password">
-            <label id="box-labels" for="password">Password</label><br />
+            <label id="box-labels" for="password"
+              >Password <span style="color: red">*</span></label
+            ><br />
             <input type="password" required />
+          </div>
+          <div id="remember-me">
+            <input type="checkbox" name="remember-me" />
+            <label for="remember-me">Remember Me</label>
           </div>
         </div>
       </form>
-      <button id="submit-login" type="submit">Submit</button>
+      <button id="submit-login" type="submit">Login</button>
       <button type="reset">Cancel</button>
     </div>
 
