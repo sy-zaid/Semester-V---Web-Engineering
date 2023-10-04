@@ -34,19 +34,20 @@
 
     <div id="login-box">
       <img id="login-avatar" src="static/avatar.png" alt="" />
-      <form action="">
+      <form action="#" method="POST">
         <div id="input-boxes">
           <div id="username">
-            <label id="box-labels" for="username"
+            <label id="box-labels" for="input-username"
               >Username or Email <span style="color: red">*</span></label
             ><br />
-            <input id="username" type="text" required />
+            <input id="input-username" type="text" required />
           </div>
+
           <div id="password">
             <label id="box-labels" for="password"
               >Password <span style="color: red">*</span></label
             ><br />
-            <input type="password" required />
+            <input id='input-password' type="password" required />
           </div>
           <div id="remember-me">
             <input type="checkbox" name="remember-me" />
@@ -54,7 +55,13 @@
           </div>
         </div>
       </form>
-      <button id="submit-login" type="submit">Login</button>
+      <button
+        id="submit-login"
+        type="submit"
+        onclick="findInputs('input-username','input-password')"
+      >
+        Login
+      </button>
       <button type="reset">Cancel</button>
     </div>
 

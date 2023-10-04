@@ -103,7 +103,7 @@ body {
   position: relative;
   width: 100px;
   height: 100px;
-  transition: all ease .5s;
+  transition: all ease 0.5s;
 }
 #login-avatar:hover {
   width: 110px;
@@ -144,7 +144,6 @@ body {
   transition: all ease 0.5s;
 }
 
-/* #input-boxes > #username > input, */
 input[type="password"]:focus,
 input[type="text"]:focus {
   background-color: rgb(200, 235, 241);
