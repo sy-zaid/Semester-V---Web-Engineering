@@ -25,7 +25,7 @@
           ></a>
         </div>
         <div id="nav-bar-right">
-          <button id="navigation-button">Contact</button>
+          <button id="primary-button">Contact</button>
         </div>
       </nav>
     </div>
@@ -35,13 +35,18 @@
     <div id="login-box">
       <form action="">
         <div id="input-boxes">
-          <label id="box-labels" for="username">Username</label><br />
-          <input id="username" type="text" />
-
-          <label id="box-labels" for="password">Password</label><br />
-          <input type="password" />
+          <div id="username">
+            <label id="box-labels" for="username">Username</label><br />
+            <input id="username" type="text" required />
+          </div>
+          <div id="password">
+            <label id="box-labels" for="password">Password</label><br />
+            <input type="password" required />
+          </div>
         </div>
       </form>
+      <button id="submit-login" type="submit">Submit</button>
+      <button type="reset">Cancel</button>
     </div>
 
     <!-- SCRIPTING -->
