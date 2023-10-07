@@ -69,4 +69,5 @@ function updateBatch(rowId) {
   // elem_row.querySelector('td:nth-child(3)').textContent = 20222
   
 
+  console.log(input_array);
 }
