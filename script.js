@@ -59,18 +59,15 @@ function updateStudent(rowId) {
   }
 }
 
-function updateBatch(rowId) {
+function updateBatch() {
   let batchno = window.prompt(
     "Enter the student number and batch number in comma seperated values"
   );
-  // batchno = 1,2020
   batchno = batchno.split(",");
   let stdno = batchno[0];
   let batch = batchno[1];
   // console.log(batch,stdno)
   let elem_row = document.getElementById("row" + stdno);
   elem_row.querySelector("td:nth-child(3)").textContent = batch;
-  // elem_row.querySelector('td:nth-child(3)').textContent = 20222
-
-  // console.log(input_array);
+  
 }
