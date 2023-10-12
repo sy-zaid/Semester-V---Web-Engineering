@@ -72,3 +72,12 @@ function updateBatch() {
   elem_row.querySelector("td:nth-child(3)").textContent = batch;
 
 }
+
+$(document).ready(function(){
+  $(table).click(function(){
+    $(this).hide()
+  })
+  console.log('Hi, lab 3')
+  
+})
+
