@@ -59,6 +59,7 @@ function updateStudent(rowId) {
   }
 }
 
+// ------------------------- LAB TASK ------------------------- //
 function updateBatch() {
   let batchno = window.prompt(
     "Enter the student number and batch number in comma seperated values"
@@ -69,5 +70,5 @@ function updateBatch() {
   // console.log(batch,stdno)
   let elem_row = document.getElementById("row" + stdno);
   elem_row.querySelector("td:nth-child(3)").textContent = batch;
-  
+
 }
