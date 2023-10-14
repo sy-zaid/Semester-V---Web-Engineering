@@ -1,3 +1,31 @@
+<!--  LAB 01 | HOME WORK TASKS
+
+Github Link: https://github.com/sy-zaid/Semester-V---Web-Engineering
+  
+Enhance the Login Form created in Lab Task above using HTML.
+a. Add Remember Me Check Box
+b. Add an image beside the form (DONE IN CSS)
+
+2. Style the Login Form using CSS
+a. Change the background-color of the textboxes when focus is set.
+b. Set the image width and height
+c. Position the image on the top-left corner using absolute and relative position combinations.
+
+3. Extend the OK and Cancel button functionality by using JS
+a. Create a function called findInputs() and return all the inputs in an array. Call the function from
+the OK button click and assign the output to an array.
+b. Create a function called validateInputs() and return true or false after looping through each input
+element obtained from the findInputs() function and verifiying if mandatory Login ID and
+Password are filled in or not. Call the validateInputs() function from the OK button click after
+findInputs() function.
+c. Show message to enter input if validateInput() output is false and return from the click event.
+d. Create a function called login() and check if Remember Me is checked or not. If it is checked,
+show message in an alert as “Logged in successfully with Remember Me Marked as Set”,
+OTHERWISE, just show “Logged in Successfully”. Call the login() function on button click.
+e. Create a function called clear() and clear all the inputs. Call the function from Cancel button
+when it is clicked.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,6 +77,7 @@
             ><br />
             <input id="input-password" type="password" required />
           </div>
+          <!-- a. Add Remember Me Check Box -->
           <div id="remember-me">
             <input type="checkbox" name="remember-me" />
             <label for="remember-me">Remember Me</label>
@@ -58,7 +87,7 @@
       <button
         id="submit-login"
         type="submit"
-        onclick="findInputs('input-username','input-password')"
+        onclick="validateInputs('input-username','input-password')"
       >
         Login
       </button>
