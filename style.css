@@ -62,17 +62,15 @@ body {
 }
 
 #primary-button:hover {
-  /* backdrop-filter: blur(2px); */
   padding: 11px 25px;
   background-color: rgb(1, 150, 177);
 }
 
-/* LOGIN Heading - 1 */
+/* LOGIN Heading */
 #heading-box {
   position: absolute;
   height: 10vh;
   width: 100vw;
-  /* background-color: red; */
   margin-top: 10vh;
   align-items: center;
 }
