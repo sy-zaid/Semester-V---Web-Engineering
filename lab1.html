@@ -72,15 +72,15 @@ when it is clicked.
           </div>
 
           <div id="password">
-            <label id="box-labels" for="password"
+            <label id="box-labels" for="input-password"
               >Password <span style="color: red">*</span></label
             ><br />
             <input id="input-password" type="password" required />
           </div>
           <!-- a. Add Remember Me Check Box -->
           <div id="remember-me">
-            <input type="checkbox" name="remember-me" />
-            <label for="remember-me">Remember Me</label>
+            <input type="checkbox" id='rememberme' name="remember-me" />
+            <label for="rememberme">Remember Me</label>
           </div>
         </div>
       </form>
@@ -91,7 +91,7 @@ when it is clicked.
       >
         Login
       </button>
-      <button type="reset">Cancel</button>
+      <button id="reset-button" type="reset">Cancel</button>
     </div>
 
     <!-- SCRIPTING -->

@@ -5,8 +5,8 @@ function findInputs(...inputs) {
   // console.log(inp1)
   let input_array = [];
   for (let input of inputs) {
-    console.log(input.value)
-    if (document.getElementById(input).value != '') {
+    console.log(input.value);
+    if (document.getElementById(input).value != "") {
       input_array.push(document.getElementById(input).value);
     }
   }
@@ -15,16 +15,34 @@ function findInputs(...inputs) {
   return input_array;
   // console.log(document.querySelector("#username"));
 }
+
+let rememberme = document.getElementById("rememberme");
+let loginbut = document.getElementById("submit-login");
+let resetbut = document.getElementById("reset-button");
+let username = document.getElementById("input-username");
+let password = document.getElementById("input-password");
+
 function validateInputs(...inputs) {
   input_val = findInputs(...inputs);
   console.log(input_val);
   console.log(input_val.length);
-  if (input_val.length == 2) {
-    alert("True! Successfully Logged In!");
+  if (input_val.length == 2 && rememberme.checked) {
+    alert("Logged in successfully with remember me checked!");
+  }
+  else if(input_val.length == 2) {
+    alert("Logged in Successfully!")
   } else {
-    alert("False!");
+    alert("Invalid Input!");
   }
 }
+
+resetbut.addEventListener('click',function(){
+  username.value = ''
+  password.value = ''
+})
+
+
+
 // function addNewStudent() {
 //   const body = document.querySelector("tbody");
 //   const row = document.createElement("tr");
