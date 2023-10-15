@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project-1 | LAB - 1</title>
-    <link rel="stylesheet" href="tempstyle.css" />
+    <title>Project-2 | LAB - 2</title>
+    <link rel="stylesheet" href="../style2.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -32,24 +32,31 @@
     </div>
 
     <div id="heading-box">
-      <h1>Students Record</h1>
+      <h1>Students Profile</h1>
+      <p>This is the student's profile table</p>
+    </div>
+
+    <div id="parabox">
+      <img src="../static/avatar.png" alt="" />
     </div>
 
     <div id="table">
       <table id="studentNames" class="students">
         <thead>
           <tr>
-            <th>Student #</th>
-            <th>Student Name</th>
-            <th>Batch</th>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Credit Hours</th>
+            <th>Year Enrolled In</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr id="row1" class="row">
-            <td>Student 1</td>
-            <td>Abdul Hafeez</td>
-            <td>2021</td>
+            <td>CS-312</td>
+            <td>Operating Systems</td>
+            <td>3 + 1</td>
+            <td>2023</td>
             <td>
               <button id="table-button" onclick="updateStudent('row1')">
                 Update
@@ -57,9 +64,10 @@
             </td>
           </tr>
           <tr id="row2" class="row">
-            <td>Student 2</td>
-            <td>Arsalan Latif</td>
-            <td>2019</td>
+            <td>SE-319</td>
+            <td>Website-Engineering</td>
+            <td>3 + 1</td>
+            <td>2023</td>
             <td>
               <button id="table-button" onclick="updateStudent('row2')">
                 Update
@@ -67,9 +75,10 @@
             </td>
           </tr>
           <tr id="row3" class="row">
-            <td>Student 3</td>
-            <td>Muzammil Ali</td>
-            <td>2018</td>
+            <td>CS-222</td>
+            <td>Data Communication & Computer Networks</td>
+            <td>3 + 1</td>
+            <td>2023</td>
             <td>
               <button id="table-button" onclick="updateStudent('row3')">
                 Update
