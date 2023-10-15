@@ -60,7 +60,7 @@ function updateBatch() {
   elem_row.querySelector("td:nth-child(3)").textContent = batch;
 }
 
-// ------------------------- STUDENT TASKS ------------------------- //
+// ------------------------- LAB # 02 | STUDENT TASKS ------------------------- //
 
 function addNewCourse() {
   const body = document.querySelector("tbody");
@@ -102,7 +102,6 @@ function addNewCourse() {
 function updateCourse(rowId) {
   const row = document.getElementById(rowId);
   if (row) {
-    // Prompt the user to enter updated student data
     const updatedcode = prompt("Enter updated course code:");
     row.querySelector("td:nth-child(1)").textContent = updatedcode;
 
@@ -114,10 +113,6 @@ function updateCourse(rowId) {
 
     const updatedYear = prompt("Enter year:");
     row.querySelector("td:nth-child(4)").textContent = updatedYear;
-
-    // Update the table cell values
-    //   row.querySelector("td:nth-child(2)").textContent = updatedName;
-    //   row.querySelector("td:nth-child(3)").textContent = updatedBatch;
   } else {
     alert("Course not found or invalid input.");
   }
@@ -128,7 +123,7 @@ function removeCourse() {
 
   const row = document.getElementById(courseId);
   if (row) {
-    const body = document.querySelectorAll("tbody");
+    const body = document.querySelector("tbody");
     body.removeChild(row);
   } else {
     alert("Course not found or invalid input.");
