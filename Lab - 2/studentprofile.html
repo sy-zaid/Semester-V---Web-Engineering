@@ -47,7 +47,7 @@
             <th>Course ID</th>
             <th>Course Name</th>
             <th>Credit Hours</th>
-            <th>Year Enrolled In</th>
+            <th>Year</th>
             <th></th>
           </tr>
         </thead>
@@ -58,7 +58,7 @@
             <td>3 + 1</td>
             <td>2023</td>
             <td>
-              <button id="table-button" onclick="updateStudent('row1')">
+              <button id="table-button" onclick="updateCourse('row1')">
                 Update
               </button>
             </td>
@@ -69,7 +69,7 @@
             <td>3 + 1</td>
             <td>2023</td>
             <td>
-              <button id="table-button" onclick="updateStudent('row2')">
+              <button id="table-button" onclick="updateCourse('row2')">
                 Update
               </button>
             </td>
@@ -80,7 +80,7 @@
             <td>3 + 1</td>
             <td>2023</td>
             <td>
-              <button id="table-button" onclick="updateStudent('row3')">
+              <button id="table-button" onclick="updateCourse('row3')">
                 Update
               </button>
             </td>
@@ -91,7 +91,7 @@
             <td>3 + 1</td>
             <td>2023</td>
             <td>
-              <button id="table-button" onclick="updateStudent('row3')">
+              <button id="table-button" onclick="updateCourse('row3')">
                 Update
               </button>
             </td>
@@ -102,20 +102,26 @@
       <input
         id="table-button"
         type="button"
-        value="Add New Student"
-        onclick="addNewStudent();"
+        value="Search Course"
+        onclick="addNewCourse();"
       />
       <input
         id="table-button"
         type="button"
-        value="Update Batch"
-        onclick="updateBatch();"
+        value="Add New Course"
+        onclick="addNewCourse();"
       />
+      <!-- <input
+        id="table-button"
+        type="button"
+        value="Update Course"
+        onclick="updateCourse();"
+      /> -->
       <input
         id="table-button"
         type="button"
-        value="Delete Student"
-        onclick="deleteStudent();"
+        value="Remove Course"
+        onclick="removeCourse();"
       />
     </div>
     <!-- SCRIPTING -->

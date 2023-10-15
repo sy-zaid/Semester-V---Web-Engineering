@@ -23,7 +23,6 @@ function addNewStudent() {
   row.appendChild(tdAction);
   body.appendChild(row);
 }
-
 function deleteStudent() {
   const studentId = prompt("Please enter Student # to delete:");
   const row = document.getElementById("row" + studentId);
@@ -34,7 +33,6 @@ function deleteStudent() {
     alert("Student not found or invalid input.");
   }
 }
-
 function updateStudent(rowId) {
   const row = document.getElementById(rowId);
   if (row) {
@@ -61,3 +59,67 @@ function updateBatch() {
   let elem_row = document.getElementById("row" + stdno);
   elem_row.querySelector("td:nth-child(3)").textContent = batch;
 }
+
+// ------------------------- STUDENT TASKS ------------------------- //
+
+function addNewCourse() {
+  const body = document.querySelector("tbody");
+  const row = document.createElement("tr");
+  const tdCourseID = document.createElement("td");
+  const tdCourseName = document.createElement("td");
+  const tdChrs = document.createElement("td");
+  const tdYear = document.createElement("td");
+  const tdAction = document.createElement("td");
+
+  let newcourse = prompt(
+    "Add details in comma seperated values: (Code, Name, Credit Hours, Year)"
+  );
+  newcourse = newcourse.split(",");
+
+  const CourseId = newcourse[0];
+  const CourseName = newcourse[1];
+  const Chrs = newcourse[2];
+  const year = newcourse[3];
+
+  row.id = "row" + CourseId.split("-")[-1];
+
+  tdCourseID.innerHTML = CourseId;
+  tdCourseName.innerHTML = CourseName;
+  tdYear.innerHTML = year;
+  tdChrs.innerHTML = Chrs;
+  tdAction.innerHTML =
+    '<button id="table-button" onclick="updateCourse(\'' +
+    row.id +
+    "')\">Update</button>";
+  row.appendChild(tdCourseID);
+  row.appendChild(tdCourseName);
+  row.appendChild(tdChrs);
+  row.appendChild(tdYear);
+  row.appendChild(tdAction);
+  body.appendChild(row);
+}
+
+
+function updateCourse(rowId) {
+    const row = document.getElementById(rowId);
+    if (row) {
+      // Prompt the user to enter updated student data
+      const updatedcode = prompt("Enter updated course code:");
+      row.querySelector("td:nth-child(1)").textContent = updatedcode;
+
+      const updatedName = prompt("Enter updated course Name:");
+      row.querySelector("td:nth-child(2)").textContent = updatedName;
+
+      const updatedChrs = prompt("Enter updated course Chrs:");
+      row.querySelector("td:nth-child(3)").textContent = updatedChrs;
+
+      const updatedYear = prompt("Enter year:");
+      row.querySelector("td:nth-child(4)").textContent = updatedYear;
+
+      // Update the table cell values
+    //   row.querySelector("td:nth-child(2)").textContent = updatedName;
+    //   row.querySelector("td:nth-child(3)").textContent = updatedBatch;
+    } else {
+      alert("Course not found or invalid input.");
+    }
+  }
