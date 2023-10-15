@@ -81,7 +81,7 @@ function addNewCourse() {
   const Chrs = newcourse[2];
   const year = newcourse[3];
 
-  row.id = "row" + CourseId.split("-")[-1];
+  row.id = CourseId;
 
   tdCourseID.innerHTML = CourseId;
   tdCourseName.innerHTML = CourseName;
@@ -99,27 +99,48 @@ function addNewCourse() {
   body.appendChild(row);
 }
 
-
 function updateCourse(rowId) {
-    const row = document.getElementById(rowId);
-    if (row) {
-      // Prompt the user to enter updated student data
-      const updatedcode = prompt("Enter updated course code:");
-      row.querySelector("td:nth-child(1)").textContent = updatedcode;
+  const row = document.getElementById(rowId);
+  if (row) {
+    // Prompt the user to enter updated student data
+    const updatedcode = prompt("Enter updated course code:");
+    row.querySelector("td:nth-child(1)").textContent = updatedcode;
 
-      const updatedName = prompt("Enter updated course Name:");
-      row.querySelector("td:nth-child(2)").textContent = updatedName;
+    const updatedName = prompt("Enter updated course Name:");
+    row.querySelector("td:nth-child(2)").textContent = updatedName;
 
-      const updatedChrs = prompt("Enter updated course Chrs:");
-      row.querySelector("td:nth-child(3)").textContent = updatedChrs;
+    const updatedChrs = prompt("Enter updated course Chrs:");
+    row.querySelector("td:nth-child(3)").textContent = updatedChrs;
 
-      const updatedYear = prompt("Enter year:");
-      row.querySelector("td:nth-child(4)").textContent = updatedYear;
+    const updatedYear = prompt("Enter year:");
+    row.querySelector("td:nth-child(4)").textContent = updatedYear;
 
-      // Update the table cell values
+    // Update the table cell values
     //   row.querySelector("td:nth-child(2)").textContent = updatedName;
     //   row.querySelector("td:nth-child(3)").textContent = updatedBatch;
-    } else {
-      alert("Course not found or invalid input.");
-    }
+  } else {
+    alert("Course not found or invalid input.");
   }
+}
+
+function removeCourse() {
+  let courseId = prompt("Please enter Course code to delete that course:");
+
+  const row = document.getElementById(courseId);
+  if (row) {
+    const body = document.querySelectorAll("tbody");
+    body.removeChild(row);
+  } else {
+    alert("Course not found or invalid input.");
+  }
+}
+
+function searchCourse() {
+  const searchquery = prompt("Enter course code to search");
+  const row = document.querySelector(`#${searchquery}`);
+  row.style.backgroundColor = "yellow";
+  setTimeout(function () {
+    row.style.backgroundColor = "white";
+    row.style.transition = "all ease 2s";
+  }, 1500);
+}
