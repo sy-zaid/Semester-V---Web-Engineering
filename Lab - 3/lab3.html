@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-1 | LAB - 3</title>
+    <link rel="stylesheet" href="tempstyle.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Jost"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="nav-bar">
+      <nav>
+        <div id="nav-bar-left">
+          <i class="ri-menu-line"></i>
+          <a href="https://www.github.com/sy-zaid">
+            <i class="ri-github-fill"></i>
+          </a>
+        </div>
+        <div id="nav-bar-right">
+          <button id="primary-button">Contact</button>
+        </div>
+      </nav>
+    </div>
+
+    <div id="heading-box">
+      <h1>Students Record</h1>
+    </div>
+
+    <div id="table">
+        
+      <table id="studentNames" class="students">
+        <thead>
+          <tr>
+            <th>Student #</th>
+            <th>Student Name</th>
+            <th>Batch</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="row1" class="row">
+            <td>Student 1</td>
+            <td>Abdul Hafeez</td>
+            <td>2021</td>
+            <td>
+              <button id="table-button" onclick="updateStudent('row1')">
+                Update
+              </button>
+            </td>
+          </tr>
+          <tr id="row2" class="row">
+            <td>Student 2</td>
+            <td>Arsalan Latif</td>
+            <td>2019</td>
+            <td>
+              <button id="table-button" onclick="updateStudent('row2')">
+                Update
+              </button>
+            </td>
+          </tr>
+          <tr id="row3" class="row">
+            <td>Student 3</td>
+            <td>Muzammil Ali</td>
+            <td>2018</td>
+            <td>
+              <button id="table-button" onclick="updateStudent('row3')">
+                Update
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <input
+        id="table-button"
+        type="button"
+        value="Add New Student"
+        onclick="addNewStudent();"
+      />
+      <input
+        id="table-button"
+        type="button"
+        value="Update Batch"
+        onclick="updateBatch();"
+      />
+      <input
+        id="table-button"
+        type="button"
+        value="Delete Student"
+        onclick="deleteStudent();"
+      />
+    </div>
+
+    
+    <!-- SCRIPTING -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
