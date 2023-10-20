@@ -164,7 +164,7 @@ $("#studentNames").click(function () {
 
 // ------------------------- Lab Task 10 -------------------------//
 $(document).ready(function () {
-  $("#myInput").on("keypress", function (e) {
+  $("#search").on("keypress", function (e) {
     if (e.which == 13) {
       var value = $(this).val().toUpperCase();
       $.ajax({
