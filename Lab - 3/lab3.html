@@ -14,6 +14,12 @@
       href="https://fonts.googleapis.com/css?family=Jost"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
@@ -32,71 +38,25 @@
     </div>
 
     <div id="heading-box">
-      <h1>Students Record</h1>
+      <h1 id="p3">
+        Minimeteo Replica | Current Weather Forecasting Application
+      </h1>
     </div>
 
-    <div id="table">
-      <table id="studentNames" class="students">
-        <thead>
-          <tr>
-            <th>Student #</th>
-            <th>Student Name</th>
-            <th>Batch</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr id="row1" class="row">
-            <td>Student 1</td>
-            <td>Abdul Hafeez</td>
-            <td>2021</td>
-            <td>
-              <button id="table-button" onclick="updateStudent('row1')">
-                Update
-              </button>
-            </td>
-          </tr>
-          <tr id="row2" class="row">
-            <td>Student 2</td>
-            <td>Arsalan Latif</td>
-            <td>2019</td>
-            <td>
-              <button id="table-button" onclick="updateStudent('row2')">
-                Update
-              </button>
-            </td>
-          </tr>
-          <tr id="row3" class="row">
-            <td>Student 3</td>
-            <td>Muzammil Ali</td>
-            <td>2018</td>
-            <td>
-              <button id="table-button" onclick="updateStudent('row3')">
-                Update
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <input
-        id="table-button"
-        type="button"
-        value="Add New Student"
-        onclick="addNewStudent();"
-      />
-      <input
-        id="table-button"
-        type="button"
-        value="Update Batch"
-        onclick="updateBatch();"
-      />
-      <input
-        id="table-button"
-        type="button"
-        value="Delete Student"
-        onclick="deleteStudent();"
-      />
+    <div id="cards-grid" class="container text-center px-4">
+      <div class="row gx-5 align-items-start">
+        <div class="col">
+          <div id="col1" class="p-3"><h1>Karachi</h1>
+          <p>Temperature</p>
+          </div>
+        </div>
+        <div class="col">
+          <div id="col2" class="p-3">Custom column padding</div>
+        </div>
+        <div class="col">
+          <div id="col3" class="p-3">Custom column padding</div>
+        </div>
+      </div>
     </div>
 
     <!-- SCRIPTING -->

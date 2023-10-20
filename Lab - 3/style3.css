@@ -180,3 +180,34 @@ body {
 .container {
   color: white;
 }
+
+#heading-box > #p3 {
+  font-size: 40px;
+}
+
+#cards-grid {
+  width: 80vw;
+  height: 50vh;
+  position: absolute;
+  /* background-color: red; */
+  margin-top: 12%;
+  margin-left: 10%;
+}
+
+.col{
+  background-color: blue;
+  height: 20vh;
+  width: 40vw;
+}
+
+#col1{
+  background-color: aqua;
+}
+
+#col2{
+  background-color: red;
+}
+
+#col3{
+  background-color: magenta;
+}

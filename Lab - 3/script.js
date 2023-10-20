@@ -206,16 +206,16 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function () {
-  $("button").click(function () {
-    $("div").animate(
-      {
-        left: "250px",
-      },
-      "slow"
-    );
-  });
-});
+// $(document).ready(function () {
+//   $("button").click(function () {
+//     $("div").animate(
+//       {
+//         left: "250px",
+//       },
+//       "slow"
+//     );
+//   });
+// });
 
 
 // --------------- LAB TASK | Searching through a table---------------//
