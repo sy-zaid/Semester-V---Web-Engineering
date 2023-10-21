@@ -232,16 +232,8 @@ $(document).ready(function () {
 $(document).ready(function () {
   const APIkey = "0808cfd6c47640d43cf1297274f2e2e0";
   let cities = ["karachi", "lahore", "islamabad"];
-
-  function setValues(response, cityname) {
-    $(`#${cityname}-temperature`).text(response.main.temp);
-    $(`#${cityname}-weather-status`).text(response.weather[0].description);
-    $(`#${cityname}-weather-icon`).attr(
-      "src",
-      `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
-    );
-    $(`#${cityname}-weather-icon`).attr("style", `filter: brightness(500%)`);
-  }
+  let currentDate = new Date();
+  currentDate = currentDate.toLocaleString();
 
   cities.forEach(function (city) {
     $.ajax({
@@ -254,4 +246,15 @@ $(document).ready(function () {
       },
     });
   });
+
+  function setValues(response, cityname) {
+    $(`#${cityname}-temperature`).text(response.main.temp + " °C");
+    $(`#${cityname}-date`).text(currentDate);
+    $(`#${cityname}-weather-status`).text(response.weather[0].description);
+    $(`#${cityname}-weather-icon`).attr(
+      "src",
+      `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
+    );
+    $(`#${cityname}-weather-icon`).attr("style", `filter: brightness(500%)`);
+  }
 });
