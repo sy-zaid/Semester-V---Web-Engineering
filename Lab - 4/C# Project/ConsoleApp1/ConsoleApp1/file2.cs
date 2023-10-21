@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Program
+    internal class file2
     {
-        static void Main1(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Hello World 1");
+            Console.WriteLine("Hello World 2");
             Console.ReadLine();
         }
     }

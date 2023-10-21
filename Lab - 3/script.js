@@ -217,7 +217,6 @@ $(document).ready(function () {
 //   });
 // });
 
-
 // --------------- LAB TASK | Searching through a table---------------//
 $(document).ready(function () {
   $("#search").on("input", function () {
@@ -225,5 +224,26 @@ $(document).ready(function () {
     $("#table-data tr").filter(function () {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
+  });
+});
+
+// ------------------------- HOME TASK | MINIMETEO ------------------------- //
+
+$(document).ready(function () {
+  const APIkey = "0808cfd6c47640d43cf1297274f2e2e0";
+  let cities = ["Karachi", "Lahore", "Islamabad"];
+  cityname = cities[1];
+
+  function setValues(response,cityname){
+    $(`#temperature`).text(response.main.temp)
+  }
+  $.ajax({
+    url: `https://api.openweathermap.org/data/2.5/weather?appid=${APIkey}`,
+    method: "GET",
+    data: { q: cityname, appid: APIkey, units:'metric' },
+    dataType: "json",
+    success: function(response){
+      setValues(response,cityname)
+    },
   });
 });

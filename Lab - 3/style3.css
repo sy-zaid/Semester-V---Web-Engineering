@@ -195,13 +195,17 @@ body {
 }
 
 .col{
-  background-color: blue;
+  /* background-color: blue; */
   height: 20vh;
   width: 40vw;
 }
 
 #col1{
-  background-color: aqua;
+  background-color: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(10px);
+  border-radius:20px;
+  border: 1px solid white;
+  font-family: Jost;
 }
 
 #col2{
