@@ -231,19 +231,27 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   const APIkey = "0808cfd6c47640d43cf1297274f2e2e0";
-  let cities = ["Karachi", "Lahore", "Islamabad"];
-  cityname = cities[1];
+  let cities = ["karachi", "lahore", "islamabad"];
 
-  function setValues(response,cityname){
-    $(`#temperature`).text(response.main.temp)
+  function setValues(response, cityname) {
+    $(`#${cityname}-temperature`).text(response.main.temp);
+    $(`#${cityname}-weather-status`).text(response.weather[0].description);
+    $(`#${cityname}-weather-icon`).attr(
+      "src",
+      `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
+    );
+    $(`#${cityname}-weather-icon`).attr("style", `filter: brightness(500%)`);
   }
-  $.ajax({
-    url: `https://api.openweathermap.org/data/2.5/weather?appid=${APIkey}`,
-    method: "GET",
-    data: { q: cityname, appid: APIkey, units:'metric' },
-    dataType: "json",
-    success: function(response){
-      setValues(response,cityname)
-    },
+
+  cities.forEach(function (city) {
+    $.ajax({
+      url: `https://api.openweathermap.org/data/2.5/weather`,
+      method: "GET",
+      data: { q: city, appid: APIkey, units: "metric" },
+      dataType: "json",
+      success: function (response) {
+        setValues(response, city);
+      },
+    });
   });
 });
