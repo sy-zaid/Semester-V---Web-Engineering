@@ -230,7 +230,7 @@ $(document).ready(function () {
 // ------------------------- HOME TASK | MINIMETEO ------------------------- //
 
 $(document).ready(function () {
-  const APIkey = "0808cfd6c47640d43cf1297274f2e2e0";
+  const APIkey = "0808cfd6c47640d43cf1297274f2ee0";
   let cities = ["karachi", "lahore", "islamabad"];
   let currentDate = new Date();
   currentDate = currentDate.toLocaleString();
@@ -244,19 +244,27 @@ $(document).ready(function () {
       success: function (response) {
         setValues(response, (cityids = city));
       },
+      error: function () {
+        var storedResponse = localStorage.getItem(`${city}-response`);
+        if (storedResponse) {
+          var response = JSON.parse(storedResponse);
+          setValues(response, (cityids = city));
+        }
+      },
     });
   });
 
-  function setValues(response, cityids = null, page2city = null) {
-    if (cityids != null) {
-      $(`#${cityids}-temperature`).text(response.main.temp + " °C");
-      $(`#${cityids}-date`).text(currentDate);
-      $(`#${cityids}-weather-status`).text(response.weather[0].description);
-      $(`#${cityids}-weather-icon`).attr(
+  function setValues(response, page1city = null, page2city = null) {
+    if (page1city != null) {
+      $(`#${page1city}-temperature`).text(response.main.temp + " °C");
+      $(`#${page1city}-date`).text(currentDate);
+      $(`#${page1city}-weather-status`).text(response.weather[0].description);
+      $(`#${page1city}-weather-icon`).attr(
         "src",
         `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
       );
-      $(`#${cityids}-weather-icon`).attr("style", `filter: brightness(500%)`);
+      $(`#${page1city}-weather-icon`).attr("style", `filter: brightness(500%)`);
+      localStorage.setItem(`${page1city}-response`, JSON.stringify(response));
     } else if (page2city != null) {
       $(`#temperature`).text(response.main.temp + " °C");
       $(`#date`).text(currentDate);
@@ -266,6 +274,7 @@ $(document).ready(function () {
         `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
       );
       $(`#weather-icon`).attr("style", `filter: brightness(500%)`);
+      localStorage.setItem(`${page2city}-response`, JSON.stringify(response));
     }
   }
 
