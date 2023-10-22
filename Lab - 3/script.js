@@ -230,7 +230,7 @@ $(document).ready(function () {
 // ------------------------- HOME TASK | MINIMETEO ------------------------- //
 
 $(document).ready(function () {
-  const APIkey = "0808cfd6c47640d43cf1297274f2ee0";
+  const APIkey = "0808cfd6c47640d43cf1297274f2e2e0";
   let cities = ["karachi", "lahore", "islamabad"];
   let currentDate = new Date();
   currentDate = currentDate.toLocaleString();
