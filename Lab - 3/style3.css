@@ -120,7 +120,9 @@ body {
   margin-left: 10%;
 }
 
-.col {
+#container-city1,
+container-city2,
+container-city3 {
   /* background-color: blue; */
   height: 20vh;
   width: 40vw;
@@ -142,7 +144,32 @@ body {
   background-color: magenta;
 }
 
+#col4 {
+  background-color: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  width: 30vw;
+  border: 1px solid white;
+  font-family: Jost;
+}
+
 #search {
   margin: 20px 0px;
   text-align: center;
+}
+
+#container-city4 {
+  display: none;
+  margin-left: 350px;
+  /* transform: translateX(-5-); */
+}
+
+#search-button {
+  width: 100px;
+  height: 40px;
+  background-color: rgb(1, 150, 177);
+  border-radius: 25px;
+  border: 1px solid white;
+  color: white;
+  margin-left: 4px;
 }

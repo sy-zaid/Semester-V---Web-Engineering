@@ -242,19 +242,55 @@ $(document).ready(function () {
       data: { q: city, appid: APIkey, units: "metric" },
       dataType: "json",
       success: function (response) {
-        setValues(response, city);
+        setValues(response, (cityids = city));
       },
     });
   });
 
-  function setValues(response, cityname) {
-    $(`#${cityname}-temperature`).text(response.main.temp + " °C");
-    $(`#${cityname}-date`).text(currentDate);
-    $(`#${cityname}-weather-status`).text(response.weather[0].description);
-    $(`#${cityname}-weather-icon`).attr(
-      "src",
-      `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
-    );
-    $(`#${cityname}-weather-icon`).attr("style", `filter: brightness(500%)`);
+  function setValues(response, cityids = null, page2city = null) {
+    if (cityids != null) {
+      $(`#${cityids}-temperature`).text(response.main.temp + " °C");
+      $(`#${cityids}-date`).text(currentDate);
+      $(`#${cityids}-weather-status`).text(response.weather[0].description);
+      $(`#${cityids}-weather-icon`).attr(
+        "src",
+        `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
+      );
+      $(`#${cityids}-weather-icon`).attr("style", `filter: brightness(500%)`);
+    } else if (page2city != null) {
+      $(`#temperature`).text(response.main.temp + " °C");
+      $(`#date`).text(currentDate);
+      $(`#weather-status`).text(response.weather[0].description);
+      $(`#weather-icon`).attr(
+        "src",
+        `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
+      );
+      $(`#weather-icon`).attr("style", `filter: brightness(500%)`);
+    }
   }
+
+  $("#search-button").on("click", function () {
+    $("#container-city1").hide();
+    $("#container-city2").hide();
+    $("#container-city3").hide();
+    $("#container-city4").show();
+
+    let searched_city = $(`#search`).val();
+    $(`#city-name`).text(searched_city);
+
+    $.ajax({
+      url: `https://api.openweathermap.org/data/2.5/weather`,
+      method: "GET",
+      data: { q: searched_city, appid: APIkey, units: "metric" },
+      dataType: "json",
+      success: function (response) {
+        $(`#city-name`).attr("style", "color:white");
+        setValues(response, (cityids = null), (page2city = searched_city));
+      },
+      error: function () {
+        $(`#city-name`).text("City not Found!");
+        $(`#city-name`).attr("style", "color:red");
+      },
+    });
+  });
 });
