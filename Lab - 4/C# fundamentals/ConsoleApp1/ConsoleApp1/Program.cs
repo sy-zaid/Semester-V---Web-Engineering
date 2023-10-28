@@ -113,7 +113,7 @@ namespace ConsoleApp1
                 }
 
 
-                for (int k = 2; k <= n - i + 1; k++) //forward  5-1=4+1
+                for (int k = 2; k <= n-i+1; k++) //forward  5-1=4+1
                 {
                     Console.Write(k + " ");
                 }
@@ -121,36 +121,69 @@ namespace ConsoleApp1
 
             }
 
-            int[] numbers = { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 };
+            int[] numbers = { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 }; 
 
             Console.Write("Enter a number to search for: ");
             int target = Convert.ToInt32(Console.ReadLine());
             bool ifexists = false;
 
-            foreach (int number in numbers)
-            {
-                if (number == target)
+                foreach (int number in numbers)
                 {
-                    ifexists = true;
+                    if (number == target)
+                    {
+                    ifexists = true;    
                     Console.WriteLine("Found");
                     break;
                 }
-            }
+                }
 
-            if (ifexists == false)
-            {
+                if (ifexists==false)
+                {
                 Console.WriteLine("Not Found");
+                }
+            
+        
+
+
+        Console.ReadLine();
+
+            int[,] array = new int[4, 4]
+        {
+            { 1, 2, 3, 4 },
+            { 5, 6, 7, 8 },
+            { 9, 10, 11, 12 },
+            { 13, 14, 15, 16 }
+        };
+
+            Console.WriteLine("Original 2D Array is:");
+            PrintArray(array);
+
+            int sumlefttobottom = 0;
+            int sumrighttobottom = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                sumlefttobottom += array[i, i];
+                sumrighttobottom += array[i, 3 - i];
             }
 
-
-
-
+            Console.WriteLine("Sum of the left to bottom diagonal is: " + sumlefttobottom);
+            Console.WriteLine("Sum of the right to bottom diagonal is: " + sumrighttobottom);
             Console.ReadLine();
-
-
-
         }
+
+        static void PrintArray(int[,] array)
+        {
+            for (int row = 0; row < 4; row++)
+            {
+                for (int col = 0; col < 4; col++)
+                {
+                    Console.Write(array[row, col] + " ");
+                }
+            Console.WriteLine();
+            }
+        }
+        
     }
 }
-
 
