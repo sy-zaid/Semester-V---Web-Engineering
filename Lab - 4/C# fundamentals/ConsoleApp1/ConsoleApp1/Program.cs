@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ConsoleApp1
 {
@@ -19,7 +21,7 @@ namespace ConsoleApp1
             //Console.ReadLine();
 
             //string input = Console.ReadLine();
-            
+
             //Console.WriteLine(input);
             //Console.ReadLine();
 
@@ -83,7 +85,7 @@ namespace ConsoleApp1
             float pi = 3.142f;
 
             float res = pi * (radius * radius);
-            Console.WriteLine("The radius of circle is: {0}", res);
+            Console.WriteLine("The area of circle is: {0}", res);
 
             //Area of Triangle
             Console.Write("Enter base:");
@@ -91,18 +93,64 @@ namespace ConsoleApp1
 
             Console.Write("Enter height:");
             double theight = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("The area of triangle is:{0}", (tbase * theight * .5));
 
-            Console.WriteLine("The area of triangle is:{0}",(tbase * theight * .5));
+            Console.ReadLine();
+
+            //1 2 3 4 5
+            //2 1 2 3 4
+            //3 2 1 2 3
+            //4 3 2 1 2
+            //5 4 3 2 1
+
+            int n = 5;
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = i; j >= 1; j--) //Reversed 1st --> j=1, j=1-1=0, 1 time            j=2, j=2-1=1, j=1-1=0, 2times
+                {
+                    Console.Write(j + " ");
+                }
+
+
+                for (int k = 2; k <= n - i + 1; k++) //forward  5-1=4+1
+                {
+                    Console.Write(k + " ");
+                }
+                Console.WriteLine();
+
+            }
+
+            int[] numbers = { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 };
+
+            Console.Write("Enter a number to search for: ");
+            int target = Convert.ToInt32(Console.ReadLine());
+            bool ifexists = false;
+
+            foreach (int number in numbers)
+            {
+                if (number == target)
+                {
+                    ifexists = true;
+                    Console.WriteLine("Found");
+                    break;
+                }
+            }
+
+            if (ifexists == false)
+            {
+                Console.WriteLine("Not Found");
+            }
+
+
+
 
             Console.ReadLine();
 
 
 
-
-
-
-
         }
-
     }
 }
+
+
